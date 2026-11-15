@@ -2,6 +2,7 @@ package redis
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"time"
 
@@ -13,7 +14,10 @@ import (
 func NewClient(url string) (*goredis.Client, error) {
 	opts, err := goredis.ParseURL(url)
 	if err != nil {
-		return nil, fmt.Errorf("parse redis url: %w", err)
+		// Deliberately drop the underlying error: url.Parse embeds the raw
+		// input, and the input contains the password, so wrapping it would
+		// leak the credential into logs.
+		return nil, errors.New("parse redis url: invalid format (expected redis:// or rediss://user:pass@host:port, no surrounding quotes)")
 	}
 	rdb := goredis.NewClient(opts)
 
