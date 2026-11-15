@@ -1,0 +1,4 @@
+.cph
+.git
+*.md
+docker-compose.yaml
