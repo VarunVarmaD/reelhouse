@@ -2,6 +2,7 @@ services:
   - type: web
     name: reelhouse
     runtime: docker
+    region: singapore # must match the Upstash region; Render cannot change region after creation
     plan: free
     healthCheckPath: /healthz
     envVars:
