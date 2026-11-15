@@ -5,8 +5,8 @@ import (
 	"sync/atomic"
 	"testing"
 
+	"github.com/VarunVarmaD/reelhouse/internal/adapters/redis"
 	"github.com/google/uuid"
-	"github.com/sikozonpc/cinema/internal/adapters/redis"
 )
 
 func TestConcurrentBooking_ExactlyOneWins(t *testing.T) {

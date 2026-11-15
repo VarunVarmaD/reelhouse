@@ -6,9 +6,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/sikozonpc/cinema/internal/adapters/redis"
-	"github.com/sikozonpc/cinema/internal/booking"
-	"github.com/sikozonpc/cinema/internal/utils"
+	"github.com/VarunVarmaD/reelhouse/internal/adapters/redis"
+	"github.com/VarunVarmaD/reelhouse/internal/booking"
+	"github.com/VarunVarmaD/reelhouse/internal/utils"
 )
 
 // envOr returns the environment variable, or fallback when unset/empty.
