@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: reelhouse
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: REDIS_URL
+        sync: false # secret: paste the Upstash rediss:// URL in the Render dashboard
